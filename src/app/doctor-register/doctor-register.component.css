@@ -1,0 +1,12 @@
+.w3-container {
+    max-width: 600px; /* change to desired width */
+    margin: auto; /* center the form horizontally */
+    border: 1px solid #ccc; /* add border */
+    padding: 20px; /* add padding */
+  }
+  .w3-container input,
+.w3-container select,
+.w3-container label,
+.w3-container .w3-radio {
+  margin-bottom: 10px;
+}

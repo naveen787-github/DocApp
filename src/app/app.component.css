@@ -1,0 +1,26 @@
+.doctors {
+    max-width: 800px;
+    margin: 0 auto;
+  
+  
+   
+  
+        .doctor-card {
+          display: flex;
+          align-items:center;
+          border: 1px solid #ccc;
+          padding: 20px;
+  
+          .doctor-image {
+            width: 120px;
+            margin-right: 20px;
+  
+            img {
+              max-width: 100%;
+            }
+          }
+  
+          }
+        }
+        
+    

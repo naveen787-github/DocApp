@@ -1,0 +1,61 @@
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<div class="w3-container w3-green">
+  <h2>Doctor Registration</h2>
+</div>
+
+
+<form class="w3-container" [formGroup]="doctorForm" (ngSubmit)="onSubmit(doctorForm.value)">
+    <p>
+      <label>Name</label>
+      <input class="w3-input" type="text" formControlName="name"></p>
+    <p>
+      <label>Email</label>
+      <input class="w3-input" type="text" formControlName="email"></p>
+  
+    <div>
+      <label>Availability</label>
+      <div>
+        <label>
+          <input type="radio" formControlName="availability" value="Available"> Available
+        </label>
+        <label>
+          <input type="radio" formControlName="availability" value="Not Available"> Not Available
+        </label>
+      </div>
+    </div>
+  
+    <div>
+      <select class="w3-select" name="Specialisation" formControlName="specialisation">
+        <option value="" disabled selected>Specialisation</option>
+        <option value="Cardiology">Cardiology</option>
+        <option value="Dermatology">Dermatology</option>
+        <option value="Pediatrics">Pediatrics</option>
+        <option value="Oncology">Oncology</option>
+        <option value="Orthopedics">Orthopedics</option>
+      </select>
+    </div>
+  
+    <div>
+      <select class="w3-select" name="Location" formControlName="location">
+        <option value="" disabled selected>Location</option>
+        <option value="Karnataka">Karnataka</option>
+        <option value="Hyderabad">Hyderabad</option>
+        <option value="Tamil Nadu">Tamil Nadu</option>
+        <option value="Kerala">Kerala</option>
+        <option value="Mumbai">Mumbai</option>
+      </select>
+    </div>
+  
+    <button class="w3-btn w3-green" type="submit">Register</button>
+    
+  </form>
+  
+
+</body>
+</html>
+ 
