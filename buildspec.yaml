@@ -1,0 +1,29 @@
+# Do not change version. This is the version of aws buildspec, not the version of your buldspec file.
+# BUILD_ENV = dev / prod (Check on Build projects ENV. section)
+# BUCKET_NAME = dev.domain.com / prod.domain.com (Check on Build projects ENV. section)
+# APPLICATION_NAME = If you store dist/APPLICATION_NAME then replace with the APPLICATION_NAME
+
+version: 0.2
+
+phases:
+    install:
+        runtime-versions:
+            nodejs: 16
+        commands:
+            - echo Installing source NPM dependencies...
+            - npm install -g @angular/cli@16.14.0
+            - npm install
+    build:
+        commands:
+            - echo Build started for prod on `date`
+            - npm run build:prod
+            - echo Build completed...
+    post_build:
+        commands:
+            - echo Pre-Build started on `date`
+            - aws s3 cp ./dist/ng-plus-aws s3://nishawsbucket --recursive --acl public-read
+            - echo Pre-Build completed on `date`
+artifacts:
+    files:
+        - dist/ng-plus-aws/**/*
+    discard-paths: yes
