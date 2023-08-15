@@ -16,12 +16,12 @@ phases:
     build:
         commands:
             - echo Build started for prod on `date`
-            - npm run build:prod
+            - npm run build
             - echo Build completed...
     post_build:
         commands:
             - echo Pre-Build started on `date`
-            - aws s3 cp ./dist/ng-plus-aws s3://nishawsbucket --recursive --acl public-read
+            - aws s3 cp ../dist/ng-plus-aws s3://nishawsbucket --recursive --acl public-read
             - echo Pre-Build completed on `date`
 artifacts:
     files:
